@@ -19,7 +19,7 @@ before_install:
 before_script:
   - npm install
 script:
-  - ng github-pages:deploy --message "travis build"
+  - ng github-pages:deploy --message "travis build $TRAVIS_BUILD_NUMBER"
 
 # whitelist
 branches:
