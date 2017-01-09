@@ -19,6 +19,7 @@ before_install:
 before_script:
   - npm install
 script:
+  - git status
   - ng github-pages:deploy --message "travis build $TRAVIS_BUILD_NUMBER"
 
 # whitelist
