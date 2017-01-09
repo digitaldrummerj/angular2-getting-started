@@ -15,7 +15,7 @@ fi
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
 openssl aes-256-cbc -K $encrypted_b32679098817_key -iv $encrypted_b32679098817_iv -in id_rsa.enc -out id_rsa -d
 mv id_rsa ~/.ssh/id_rsa
-chmod 600 deploy_key
+chmod 600 ~/.ssh/id_rsa
 eval `ssh-agent -s`
 ssh-add ~/.ssh/id_rsa
 
