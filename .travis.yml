@@ -18,8 +18,9 @@ before_install:
 
 before_script:
   - npm install
+  - git remote set-url origin $git_remote
+  - git remote -v
 script:
-  - git status
   - ng github-pages:deploy --message "travis build $TRAVIS_BUILD_NUMBER"
 
 # whitelist
