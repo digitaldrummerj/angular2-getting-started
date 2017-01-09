@@ -20,7 +20,7 @@ before_install:
   - npm install -g angular-cli
 
 before_script:
-  - npm install
+#  - npm install
 #  - git remote set-url origin $git_remote
   
 script:
