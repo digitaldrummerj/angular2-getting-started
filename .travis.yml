@@ -24,7 +24,8 @@ before_script:
 #  - git remote set-url origin $git_remote
   
 script:
-  - ./deploy.sh
+  - chmod +x deploy.sh
+  - ./deploy.sh 
   # - ng build --prod
   # - ng test --watch=false
 # after_success:
