@@ -3,6 +3,9 @@ dist: trusty
 node_js:
   - "6"
 sudo: true
+cache:
+  directories: node_modules
+  
 before_install:
   - openssl aes-256-cbc -K $encrypted_b32679098817_key -iv $encrypted_b32679098817_iv -in id_rsa.enc -out id_rsa -d
   - mv id_rsa ~/.ssh/id_rsa
@@ -19,10 +22,14 @@ before_install:
 before_script:
   - npm install
   - git remote set-url origin $git_remote
-  - git remote -v
-script:
-  - ng github-pages:deploy --message "travis build $TRAVIS_BUILD_NUMBER"
 
+script:
+  - ng build --prod
+  - ng test --single-run
+after_success:
+  - - chmod +x ./delete-gh-pages.sh
+  - ./delete-gh-pages.sh
+  - ng github-pages:deploy --message "travis build $TRAVIS_BUILD_NUMBER"
 # whitelist
 branches:
   only:
