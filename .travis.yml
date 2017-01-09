@@ -4,7 +4,7 @@ node_js:
   - "6"
 sudo: true
 before_install:
-  - openssl aes-256-cbc -K $encrypted_61740b62867e_key -iv $encrypted_61740b62867e_iv -in id_rsa.enc -out id_rsa -d
+  - openssl aes-256-cbc -K $encrypted_b32679098817_key -iv $encrypted_b32679098817_iv -in id_rsa.enc -out id_rsa -d
   - mv id_rsa ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
   - export CHROME_BIN=/usr/bin/google-chrome
