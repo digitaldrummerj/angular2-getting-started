@@ -27,7 +27,7 @@ before_script:
   
 script:
   - chmod +x deploy.sh
-  - ./deploy.sh 
+  - bash ./deploy.sh 
   # - ng build --prod
   # - ng test --watch=false
 # after_success:
