@@ -25,7 +25,7 @@ before_script:
 
 script:
   - ng build --prod
-  - ng test --single-run
+  - ng test --watch=false
 after_success:
   - - chmod +x ./delete-gh-pages.sh
   - ./delete-gh-pages.sh
