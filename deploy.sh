@@ -26,7 +26,7 @@ SHA=`git rev-parse --verify HEAD`
 
 # Clone the existing gh-pages for this repo into out/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
-git clone $REPO dist
+git clone $REPO ../out
 cd dist
 git config user.name "Travis CI"
 git config user.email "cideploy@digitaldrummerj.me"
@@ -44,16 +44,16 @@ rm -rf dist/**/* || exit 0
 # Run our compile script
 
 ng build --prod -o ./dist --base-href "/angular2-getting-started/"
-ng test --watch=false        
+# ng test --watch=false        
 
 # Now let's go have some fun with the cloned repo
 cd dist
 
 # If there are no changes (e.g. this is a README update) then just bail.
-if [ -z `git diff --exit-code` ]; then
-    echo "No changes to the spec on this push; exiting."
-    exit 0
-fi
+# if [ -z `git diff --exit-code` ]; then
+#     echo "No changes to the spec on this push; exiting."
+#     exit 0
+# fi
 
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
