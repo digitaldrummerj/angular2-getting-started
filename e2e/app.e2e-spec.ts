@@ -1,10 +1,10 @@
-import { Ng2StartPage } from './app.po';
+import { Angular2GettingStartedPage } from './app.po';
 
-describe('ng2-start App', function() {
-  let page: Ng2StartPage;
+describe('angular2-getting-started App', function() {
+  let page: Angular2GettingStartedPage;
 
   beforeEach(() => {
-    page = new Ng2StartPage();
+    page = new Angular2GettingStartedPage();
   });
 
   it('should display message saying app works', () => {
